@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Jogo de Adivinhação</title>
+  <link rel="stylesheet" href="jogo.css">
+</head>
+<body>
+<div class="container">
+    <div class="containerc">
+        <div class="containerfilho">
+  <h1>Jogo de Adivinhação</h1>
+  <p>Tente adivinhar um número entre <span>1</span> e <span>100</span>.</p>
+
+  <input class="text" type="text" id="guess" placeholder="Digite seu palpite aqui...">
+  <button onclick="checkGuess()" id="myButton">Verificar</button>
+
+  </div>
+  <script>
+    const number = Math.floor(Math.random() * 100) + 1;
+    let attempts = 0;
+    
+    function checkGuess() {
+      const guess = parseInt(document.getElementById("guess").value);
+
+      attempts++;
+      if (guess === number) {
+        alert("Parabéns, você acertou em " + attempts + " tentativa(s)!");
+      } else if (guess < number) {
+        alert("Tente um número maior.");
+      } else {
+        alert("Tente um número menor.");
+      }
+    }
+  </script>
+  </div> 
+  </div>
+</div>
+</div>
+</body>
+</html>
